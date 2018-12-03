@@ -10,10 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_145946) do
+ActiveRecord::Schema.define(version: 2018_12_03_153237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "car_id"
+    t.date "date_from"
+    t.date "date_to"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_bookings_on_car_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "car_types", force: :cascade do |t|
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.integer "year"
+    t.integer "passengers"
+    t.string "color"
+    t.integer "horsepower"
+    t.bigint "car_type_id"
+    t.decimal "price_per_day"
+    t.string "fuel_type"
+    t.string "city"
+    t.string "zipcode"
+    t.string "country"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_type_id"], name: "index_cars_on_car_type_id"
+    t.index ["user_id"], name: "index_cars_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,4 +77,9 @@ ActiveRecord::Schema.define(version: 2018_12_03_145946) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "cars"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "cars", "car_types"
+  add_foreign_key "cars", "users"
+  add_foreign_key "reviews", "bookings"
 end
