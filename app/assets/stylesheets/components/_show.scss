@@ -1,0 +1,86 @@
+.car-wraper {
+  // display: flex;
+  // align-items: center;
+  // flex-direction: column;
+  // width: 100%;
+  padding: 30px;
+  background-color: white;
+  padding-top: 20px;
+  // width: 60%;
+}
+
+.review-wraper {
+  background-color: white;
+  ul {
+    margin: 20px 20px 0px 20px;
+    padding-left: 0px;
+  }
+}
+
+.show-title-wraper {
+  background-color: white;
+  margin-bottom: 30px solid transparent;
+}
+
+.show-card {
+  // display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.image-show {
+  height: 300px;
+  // width: 60%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  // border: 10px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.title-show {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+.car-card-title {
+  display: flex;
+  border-bottom: 1px solid gray;
+  margin: 0px 20px 15px 20px;
+}
+
+.green-line {
+  width: 50px;
+  border-bottom: 3px solid #60CD44;
+}
+
+.text-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0px 0px 10px gray;
+}
+
+.rent-button {
+  justify-content: center;
+  display: flex;
+}
+
+.show-button {
+  margin-top: 30px;
+}
+
+
+.required {
+  display: flex;
+  justify-content: space-between;
+}
+
+.booking-form {
+  padding-top: 10px;
+  border-top: 1px solid gray;
+}
