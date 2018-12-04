@@ -1,5 +1,5 @@
 class CarType < ApplicationRecord
   has_many :cars
 
-  validates :type, presence: true
+  validates :car_type, presence: true
 end
