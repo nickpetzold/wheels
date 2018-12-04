@@ -1,0 +1,67 @@
+.car-wraper {
+  // display: flex;
+  // width: 100%;
+  padding: 30px;
+  padding-top: 0px;
+  background-color: white;
+}
+
+.show-card {
+  display: flex;
+  justify-content: center;
+}
+
+.image-show {
+  height: 300px;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat
+}
+
+.title-show {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+.car-card-title {
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+.green-line {
+  width: 50px;
+  border-bottom: 3px solid #60CD44;
+}
+
+.text-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0px 0px 10px gray;
+}
+
+.rent-button {
+  justify-content: center;
+  display: flex;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 15px;
+}
+
+
+.required {
+  display: flex;
+  justify-content: space-between;
+}
+
+.booking-form {
+  padding-top: 10px;
+  border-top: 1px solid gray;
+}
