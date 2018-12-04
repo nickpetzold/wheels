@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+
   def index
     @cars = Car.all
   end
@@ -8,5 +9,4 @@ class CarsController < ApplicationController
     # @reviews = @car.reviews
     # @booking = Booking.new
   end
-
 end
