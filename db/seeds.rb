@@ -120,5 +120,9 @@ review = Review.new(title: "Great Car!", content: "Loved the BMW i8 on my honeym
 review.booking = Booking.last
 review.save
 
+review2 = Review.new(title: "Awesome car.", content: "Loved the car, apart from a few noises.", rating: 4)
+review2.booking = Booking.last
+review2.save
+
 puts "Seeding completed"
 
