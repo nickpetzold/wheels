@@ -12,6 +12,8 @@ class Booking < ApplicationRecord
   validate :date_from_cannot_be_in_the_past
   validate :date_to_cannot_be_before_date_from
 
+  private
+
   def date_from_cannot_be_in_the_past
     errors.add(:date_from, "can't be in the past") if date_from < Date.today
   end
