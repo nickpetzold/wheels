@@ -1,28 +1,42 @@
+<h2><%= @data %></h2>
+
 <div class="cars-wrapper">
   <div class="container">
-    <% 40.times do %>
-      <div class="row">
-        <div class="teste">
-          <div class="message">
-            <img class="avatar-large" src="https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-a3-1.jpg?itok=A0NbYXyS">
-            <div class="message-name">
-              <h3>arnold schwarzenegger</h3>
-            </div>
-            <div class="message-name">
-              <h3>Audi A3</h3>
-            </div>
-             <div class="message-name">
-              <h3>Lisbon</h3>
-            </div>
-             <div class="message-name">
-              <h3>4P</h3>
-            </div>
-             <div class="message-name">
-              <h3>200 Euros</h3>
-            </div>
+    <% @cars.each do |car| %>
+    <%= link_to car_path(car) do %>
+    <div class="row">
+      <div class="car-card">
+        <div class="car">
+          <%= image_tag "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-a3-1.jpg?itok=A0NbYXyS", class: "car-image" %>
+          <div class="car-details">
+            <h3><%= car.brand %></h3>
+          </div>
+          <div class="car-details">
+            <h3><%= car.model %></h3>
+          </div>
+          <div class="car-details">
+            <h3><%= car.horsepower %> HP </h3>
+          </div>
+          <div class="car-details">
+            <h3><%= car.fuel_type.capitalize %></h3>
+          </div>
+          <div class="car-details">
+            <h3><%= car.country %></h3>
+          </div>
+          <div class="car-details">
+            <h3>
+              <% car.passengers.times do %>
+              <i class="fas fa-user"></i>
+              <% end %>
+            </h3>
+          </div>
+          <div class="car-details">
+            <h3><%= car.price_per_day %> EUR </h3>
           </div>
         </div>
       </div>
+    </div>
+    <% end %>
     <% end %>
   </div>
   <div id="map" style="position: relative;overflow: hidden;">
