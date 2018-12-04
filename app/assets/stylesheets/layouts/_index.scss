@@ -3,3 +3,9 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+body {
+  background-color: $light-gray;
+  a {
+    text-decoration: none;
+  }
+}

@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:edit, :update, :destroy] do
     resources :reviews, only: [:new, :create, :edit, :update]
   end
+
+  get 'dashboard', to: 'bookings#dashboard', as: :dashboard
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

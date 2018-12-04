@@ -1,0 +1,91 @@
+.navbar-croker {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background: white;
+  transition: all 0.3s ease;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.content-container {
+  width: 1080px;
+  // border: 1px solid black;
+  margin: 0px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.tabs-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-tabs {
+  flex: 1 0 710px;
+}
+
+.right-content {
+  flex: 1 0 300px;
+  display: flex;
+  align-items: center;
+  button {
+    margin: 0;
+    padding: 5px 30px;
+    border-radius: 4px;
+  }
+  i {
+    margin-left: 10px;
+    color: #D3D3D3;
+  }
+  .detail {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 10px;
+    color: #D3D3D3;
+    text-align: right;
+    .value {
+      color: #454545;
+    }
+  }
+}
+
+.logo {
+  height: 70px;
+}
+
+.deposit-btn {
+  vertical-align: middle;
+}
+
+.navbar-tabs {
+  a {
+    font-size: 20px;
+    color: $mid-gray;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 24px;
+  }
+  a.active {
+    font-weight: 900;
+    font-size: 20px;
+    color: $gray;
+    border-bottom: 4px solid $green;
+  }
+  a:hover {
+    color: $gray;
+  }
+  a:first-child {
+    margin-left: 20px;
+  }
+}
+
+

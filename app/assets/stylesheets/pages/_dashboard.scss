@@ -1,0 +1,65 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container {
+  // height: 900px;
+  width: 1080px;
+  padding: 0;
+  padding: 30px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.dash-square {
+  background-color: white;
+  box-shadow: 1px 1px 50px rgba(0,0,0,0.1);
+}
+
+.portfolio {
+  height: 250px;
+}
+
+.portfolio-vals {
+  flex: 0 0 705px;
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.portfolio-stats {
+  flex: 0 0 355px;
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.my-portfolio {
+  flex: 1 0 auto;
+  height: 200px;
+}
+
+.top-win-lose {
+  flex: 0 0 450px;
+  height: 200px;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+
+.twitter-feed {
+  flex: 0 0 330px;
+  height: 200px;
+  margin: 0 10px;
+}
+
+.top-traded {
+  flex: 0 0 260px;
+  height: 200px;
+  margin-right: 0px;
+  margin-left: 10px;
+}
