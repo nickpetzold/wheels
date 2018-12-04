@@ -34,10 +34,9 @@
     <div class="green-line"></div>
     <h3 class="title-show">Reviews</h3>
   </div>
-    <ul>
-      <% @reviews.each do |review| %>
-        <span><%= review.rating %>/5 - <%= review.content %> |</span>
-      <% end %>
-    </ul>
-
+  <ul>
+    <% @reviews.each do |review| %>
+      <span><%= review.rating %>/5 - <%= review.content %> |</span>
+    <% end %>
+  </ul>
 </div>
