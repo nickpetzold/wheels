@@ -14,4 +14,8 @@ class Car < ApplicationRecord
   validates :zipcode, presence: true
   validates :country, presence: true
   validates :car_type_id, presence: true
+  validates :address, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
