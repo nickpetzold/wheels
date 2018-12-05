@@ -13,11 +13,9 @@
             <th>Details</th>
             <th>Dates</th>
           </tr>
-          <% numberBookings = 0 %>
           <% @bookings.each do |booking| %>
-          <% numberBookings += 1 %>
           <tr>
-            <td><%= booking.car.brand %> <%= booking.car.model %></td>
+            <td class= "table-car-brand"><%= booking.car.brand %> <%= booking.car.model %></td>
             <td><%= booking.user.first_name.capitalize %> <%= booking.user.last_name.capitalize %></td>
             <td><%= booking.price %>€</td>
             <td><%= Date::MONTHNAMES[booking.date_to.month] %> <%= booking.date_from.day %>, <%= booking.date_from.year %> to <%= Date::MONTHNAMES[booking.date_to.month] %> <%= booking.date_to.day %></td>
@@ -58,10 +56,10 @@
           </tr>
           <% @cars.each do |car| %>
           <tr>
-            <td><%= car.brand %> <%= car.model %></td>
+            <td class= "table-car-brand"><%= car.brand %> <%= car.model %></td>
             <td><%= car.year %></td>
             <td><%= car.fuel_type %></td>
-            <td><%= numberBookings %></td>
+            <td><%= car.bookings.all.length %></td>
             <td><%= car.price_per_day %>€</td>
           </tr>
           <% end %>
