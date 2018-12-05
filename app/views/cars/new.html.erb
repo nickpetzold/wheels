@@ -1,0 +1,16 @@
+<%= simple_form_for @car do |f| %>
+      <%= f.input :brand%>
+      <%= f.input :model %>
+      <%= f.input :year %>
+      <%= f.input :color %>
+      <%= f.input :passengers %>
+      <%= f.input :horsepower %>
+      <%= f.input :fuel_type %>
+      <%= f.association :car_type %>
+      <%= f.input :city %>
+      <%= f.input :zipcode %>
+      <%#= f.input :country %>
+      <%= f.input :address %>
+      <%= f.input :price_per_day %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>

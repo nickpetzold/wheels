@@ -8,7 +8,14 @@ function picker () {
   if (startDateinput && endDateinput) {
     flatpickr(startDateinput, {
     minDate: 'today',
-    dateFormat: 'd-m-Y',
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: 'Y-m-d',
+    disable: [
+        {
+            from: "2018-12-10",
+            to: "2018-12-20"
+        }],
     onChange: function(_, selectedDate) {
       if (selectedDate === '') {
         return endDateinput.disabled = true;
@@ -19,9 +26,17 @@ function picker () {
   });
     const endDateCalendar =
       flatpickr(endDateinput, {
-        dateFormat: 'd-m-Y',
+        altInput: true,
+        altFormat: "F j, Y",
+        dateFormat: 'Y-m-d',
       });
   }
 }
 
 export { picker };
+
+// {
+//     altInput: true,
+//     altFormat: "F j, Y",
+//     dateFormat: "Y-m-d",
+// }

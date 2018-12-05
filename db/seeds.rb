@@ -20,53 +20,63 @@ end
 
 
 puts "Creating Cars"
-car = Car.new(brand: "BMW", model: "i8", year: 2018, passengers: 4, color: "white", horsepower: 400, price_per_day: 30, fuel_type: "electric", city: "Lisbon", zipcode: "1170-100", country: "Portugal")
+car = Car.new(brand: "BMW", model: "i8", year: 2018, passengers: 4, color: "white", horsepower: 400, price_per_day: 30, fuel_type: "electric", city: "Lisbon", zipcode: "1000-028", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "Mercedes", model: "C", year: 2017, passengers: 4, color: "black", horsepower: 300, price_per_day: 50, fuel_type: "diesel", city: "Lisbon", zipcode: "1200-401", country: "Portugal")
+car = Car.new(brand: "Mercedes", model: "C", year: 2017, passengers: 4, color: "black", horsepower: 300, price_per_day: 50, fuel_type: "diesel", city: "Lisbon", zipcode: "1000-058", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "Porsche", model: "Cayenne", year: 2016, passengers: 6, color: "brown", horsepower: 400, price_per_day: 60, fuel_type: "petrol", city: "Lisbon", zipcode: "1250-144", country: "Portugal")
+car = Car.new(brand: "Porsche", model: "Cayenne", year: 2016, passengers: 6, color: "brown", horsepower: 400, price_per_day: 60, fuel_type: "petrol", city: "Lisbon", zipcode: "1000-070", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "Lamborghini", model: "Aventador", year: 2016, passengers: 2, color: "orange", horsepower: 750, price_per_day: 100, fuel_type: "gas", city: "Lisbon", zipcode: "1100-341", country: "Portugal")
+car = Car.new(brand: "Lamborghini", model: "Aventador", year: 2016, passengers: 2, color: "orange", horsepower: 750, price_per_day: 100, fuel_type: "gas", city: "Lisbon", zipcode: "1000-101", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "Audi", model: "R8", year: 2012, passengers: 2, color: "silver", horsepower: 580, price_per_day: 120, fuel_type: "petrol", city: "Lisbon", zipcode: "1170-166", country: "Portugal")
+car = Car.new(brand: "Audi", model: "R8", year: 2012, passengers: 2, color: "silver", horsepower: 580, price_per_day: 120, fuel_type: "petrol", city: "Lisbon", zipcode: "1000-102", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "VW", model: "Golf", year: 2009, passengers: 4, color: "red", horsepower: 200, price_per_day: 90, fuel_type: "diesel", city: "Lisbon", zipcode: "1950-144", country: "Portugal")
+car = Car.new(brand: "VW", model: "Golf", year: 2009, passengers: 4, color: "red", horsepower: 200, price_per_day: 90, fuel_type: "diesel", city: "Lisbon", zipcode: "1000-140", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "Mini", model: "Cooper JCW", year: 2015, passengers: 4, color: "green", horsepower: 210, price_per_day: 200, fuel_type: "petrol", city: "Lisbon", zipcode: "1990-196", country: "Portugal")
+car = Car.new(brand: "Mini", model: "Cooper JCW", year: 2015, passengers: 4, color: "green", horsepower: 210, price_per_day: 200, fuel_type: "petrol", city: "Lisbon", zipcode: "1000-143", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "Ferrari", model: "F12 Berlinetta", year: 2016, passengers: 2, color: "red", horsepower: 900, price_per_day: 100, fuel_type: "gas", city: "Lisbon", zipcode: "2685-223", country: "Portugal")
+car = Car.new(brand: "Ferrari", model: "F12 Berlinetta", year: 2016, passengers: 2, color: "red", horsepower: 900, price_per_day: 100, fuel_type: "gas", city: "Lisbon", zipcode: "1000-188", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "Aston Martin", model: "DB12", year: 2010, passengers: 4, color: "yellow", horsepower: 750, price_per_day: 120, fuel_type: "petrol", city: "Lisbon", zipcode: "1495-718", country: "Portugal")
+car = Car.new(brand: "Aston Martin", model: "DB12", year: 2010, passengers: 4, color: "yellow", horsepower: 750, price_per_day: 120, fuel_type: "petrol", city: "Lisbon", zipcode: "1000-190", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
-car = Car.new(brand: "Jaguar", model: "F-Type", year: 2017, passengers: 2, color: "black", horsepower: 650, price_per_day: 100, fuel_type: "diesel", city: "Lisbon", zipcode: "2770-023", country: "Portugal")
+car = Car.new(brand: "Jaguar", model: "F-Type", year: 2017, passengers: 2, color: "black", horsepower: 650, price_per_day: 100, fuel_type: "diesel", city: "Lisbon", zipcode: "1000-195", country: "Portugal")
 car.user = User.last
+car.address = "#{car["city"]},#{car["zipcode"]}"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
