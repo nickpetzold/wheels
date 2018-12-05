@@ -1,11 +1,14 @@
 class CarsController < ApplicationController
 
+  layout "map", only: [:index]
+
   def index
     @cars = Car.all
     @markers = @cars.map do |car|
       {
         lng: car.longitude,
-        lat: car.latitude
+        lat: car.latitude,
+        infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
       }
     end
   end
@@ -14,6 +17,12 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @reviews = @car.reviews
     @booking = Booking.new
+    # @markers = @car.map do |car|
+    #   {
+    #     lng: car.longitude,
+    #     lat: car.latitude
+    #   }
+    # end
   end
 
   def new
@@ -34,9 +43,7 @@ class CarsController < ApplicationController
 
   private
 
-
   def car_params
-    params.require(:car).permit(:brand, :model, :year, :passengers, :price_per_day, :address, :fuel_type, :city, :country, :car_type_id, :zipcode)
+    params.require(:car).permit(:brand, :model, :year, :passengers, :price_per_day, :address, :fuel_type, :city, :country, :car_type_id, :zipcode, :photo)
   end
-
 end

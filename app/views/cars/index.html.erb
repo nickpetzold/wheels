@@ -5,7 +5,7 @@
     <div class="row">
       <div class="car-card">
         <div class="car">
-          <%= image_tag "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-a3-1.jpg?itok=A0NbYXyS", class: "car-image" %>
+          <%= image_tag "#{car.photo}", class: "car-image" %>
           <div class="car-details">
             <h3><%= car.brand %></h3>
           </div>
@@ -19,7 +19,7 @@
             <h3><%= car.fuel_type.capitalize %></h3>
           </div>
           <div class="car-details">
-            <h3><%= car.country %></h3>
+            <h3><%= car.city %></h3>
           </div>
           <div class="car-details">
             <h3>
