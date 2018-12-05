@@ -15,7 +15,7 @@
     <!-- Flash messages copied as placeholder -->
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
-    <%= render "shared/navbar-croker" unless devise_controller? %>
+    <%= render "shared/navbar-wheels" unless current_page?('/') %>
     <%= yield %>
     <%= render "shared/footer"  %>
     <%= stylesheet_pack_tag "map" %>
