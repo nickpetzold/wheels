@@ -2,7 +2,7 @@
     <div class="cars-container">
       <% @cars.each do |car| %>
       <div class="product">
-        <%= image_tag "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-a3-1.jpg?itok=A0NbYXyS", class: "product-image hidden-xs" %>
+        <%= image_tag car.photo, class: "index-product-image hidden-xs" %>
         <div class='product-body'>
           <h3><%= link_to car.brand, car_path(car) %></h3>
           <p><%= link_to car.model, car_path(car) %></p>
