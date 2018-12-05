@@ -1,6 +1,6 @@
 class Car < ApplicationRecord
   belongs_to :car_type
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :bookings
   has_many :reviews, through: :bookings
 

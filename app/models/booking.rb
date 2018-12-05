@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :car
-  has_one :review
+  has_many :reviews
 
   validates :user_id, presence: true
   validates :car_id, presence: true
@@ -9,8 +9,8 @@ class Booking < ApplicationRecord
   validates :date_to, presence: true
   validates :price, presence: true
 
-  validate :date_from_cannot_be_in_the_past
-  validate :date_to_cannot_be_before_date_from
+  # validate :date_from_cannot_be_in_the_past
+  # validate :date_to_cannot_be_before_date_from
 
   private
 
