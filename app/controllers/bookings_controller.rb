@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:edit, :update, :new, :create, :dashboard]
+
   def new
     @car = Car.find(params[:car_id])
     @booking = Booking.new
