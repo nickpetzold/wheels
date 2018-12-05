@@ -1,12 +1,19 @@
 class BookingsController < ApplicationController
+  def new
+    @car = Car.find(params[:car_id])
+    @booking = Booking.new
+  end
+
   def create
+    @car = Car.find(params[:car_id])
     @booking = Booking.new(booking_params)
-    car = Car.find(@booking.car_id)
-    @booking.price = (@booking.date_to - @booking.date_from).to_i * car.price_per_day
+    @booking.car = @car
+    @booking.user = current_user
+    @booking.price = (@booking.date_to - @booking.date_from).to_i * @car.price_per_day
     if @booking.save
       redirect_to cars_path
     else
-      render new
+      redirect_to cars_path
     end
   end
 
