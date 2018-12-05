@@ -14,6 +14,12 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @reviews = @car.reviews
     @booking = Booking.new
+    # @markers = @car.map do |car|
+    #   {
+    #     lng: car.longitude,
+    #     lat: car.latitude
+    #   }
+    # end
   end
 
   def new
@@ -34,9 +40,7 @@ class CarsController < ApplicationController
 
   private
 
-
   def car_params
     params.require(:car).permit(:brand, :model, :year, :passengers, :price_per_day, :address, :fuel_type, :city, :country, :car_type_id, :zipcode)
   end
-
 end
