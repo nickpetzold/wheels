@@ -1,11 +1,14 @@
 class CarsController < ApplicationController
 
+  layout "map", only: [:index]
+
   def index
     @cars = Car.all
     @markers = @cars.map do |car|
       {
         lng: car.longitude,
-        lat: car.latitude
+        lat: car.latitude,
+        infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
       }
     end
   end
