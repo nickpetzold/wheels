@@ -10,6 +10,7 @@ class CarsController < ApplicationController
       {
         lng: car.longitude,
         lat: car.latitude,
+        id: car.id,
         infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
       }
     end

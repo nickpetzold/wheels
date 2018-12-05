@@ -29,11 +29,22 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
   markers.forEach((marker) => {
+    var popup = new mapboxgl.Popup({offset: 25})
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
-      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setPopup(popup // add popups
       .setHTML(marker.infoWindow.content))
       .addTo(map);
+
+document.getElementById("car-"+ marker.id).onclick = function(e) {
+  if(this.dataset.opened == undefined || this.dataset.opened == "false") {
+    this.setAttribute('data-opened', true)
+    popup.addTo(map)
+  } else if (this.dataset.opened == "true") {
+    this.setAttribute('data-opened', false)
+    popup.remove()
+  }
+}
   });
 }
 
