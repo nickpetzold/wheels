@@ -13,12 +13,22 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to cars_path
     else
-      redirect_to cars_path
+      redirect_to car_path(@car)
     end
   end
 
-  def dashboard
+  def edit
+    @booking = Booking.find(params[:id])
+  end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to cars_path
+  end
+
+  def dashboard
+    @bookings = Booking.where(user_id: current_user)
   end
 
   private

@@ -31,6 +31,11 @@
   flex: 0 0 705px;
   margin-left: 0;
   margin-right: 10px;
+  overflow: scroll;
+  ul {
+    padding-left: 0px;
+    margin: 0px 20px 0px 20px
+  }
 }
 
 .portfolio-stats {
