@@ -1,0 +1,26 @@
+<div class="container-marker">
+  <div>
+    <%= image_tag car.photo, class:"marker-photo" %>
+  </div>
+</div>
+
+
+<div class="container-marker-details">
+  <div class="brand-model">
+    <h1><%= car.brand %></h3>
+    <h2><%= car.model %></h3>
+  </div>
+  <div class="brand-model">
+    <h1><%= car.fuel_type.capitalize %></h3>
+    <h2><%= car.horsepower %> HP</h3>
+  </div>
+  <div class="price">
+    <h1><%= car.price_per_day.to_i %></h1>
+    <h2>EUR</h2>
+  </div>
+</div>
+
+<%= link_to car_path(car) do %>
+  <h3 id="button-marker" class="btn btn-success">Book Now</h3>
+<% end %>
+
