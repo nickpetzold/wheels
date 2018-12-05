@@ -19,7 +19,7 @@
 }
 
 .background{
-  background: linear-gradient(225deg, rgba(100,200,0,0.15), rgba(180,200,0,0.2) 50%), url(asset-path('image_car_1.jpeg'));
+  background: linear-gradient(225deg, rgba(100,200,0,0.1), rgba(180,200,0,0.1) 50%), url(asset-path('image_car_1.jpeg'));
   background-size: cover !important;
   color: white;
   height: 100vh;
@@ -28,6 +28,11 @@
   align-items: center;
 }
 
+#landing-button {
+  margin-top: 40px;
+  font-size: 40px !important;
+  border-radius: 4px !important;
+}
 
 
 

@@ -1,12 +1,15 @@
 <div class="background">
  <div class="banner">
   <div class="banner-content">
-    <h1>Find your perfect car</h1>
-    <p>Rent a car from our inventory.</p>
-    <form action="#" class="form-inline">
+    <h1>Find your perfect car today...</h1>
+    <!-- <p>Rent a car from our inventory.</p> -->
+    <%= link_to cars_path do %>
+    <button id="landing-button" class="btn btn-success btn-lg">START NOW</button>
+    <% end %>
+ <!--    <form action="#" class="form-inline">
       <input type="text" class="form-control input-lg" placeholder="Enter a city">
-      <input type="submit" class="btn btn-success btn-lg" value="Search">
-    </form>
+      <input type="submit" class="btn btn-success btn-lg" value="Start Now">
+    </form> -->
   </div>
 </div>
 </div>
