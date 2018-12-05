@@ -23,6 +23,7 @@ puts "Creating Cars"
 car = Car.new(brand: "BMW", model: "i8", year: 2018, passengers: 4, color: "white", horsepower: 400, price_per_day: 30, fuel_type: "electric", city: "Lisbon", zipcode: "1000-028", country: "Portugal")
 car.user = User.last
 car.address = "#{car["city"]},#{car["zipcode"]}"
+car.photo = "https://assets.pcmag.com/media/images/402482-2015-bmw-i8.jpg?width=810&height=456"
 car.car_type = CarType.order("RANDOM()").first
 car.save
 
