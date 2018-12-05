@@ -13,12 +13,14 @@
             <th>Details</th>
             <th>Dates</th>
           </tr>
+          <% numberBookings = 0 %>
           <% @bookings.each do |booking| %>
+          <% numberBookings += 1 %>
           <tr>
             <td><%= booking.car.brand %> <%= booking.car.model %></td>
             <td><%= booking.user.first_name.capitalize %> <%= booking.user.last_name.capitalize %></td>
             <td><%= booking.price %>€</td>
-            <td><%= booking.date_from %> - <%= booking.date_to %></td>
+            <td><%= Date::MONTHNAMES[booking.date_to.month] %> <%= booking.date_from.day %>, <%= booking.date_from.year %> to <%= Date::MONTHNAMES[booking.date_to.month] %> <%= booking.date_to.day %></td>
           </tr>
           <% end %>
         </table>
@@ -26,14 +28,44 @@
       <div class="dash-square portfolio portfolio-stats">
         <div class="car-card-title">
           <div class="green-line"></div>
-          <h3 class="title-show">Your Rating</h3>
+          <h3 class="title-show">Your rating</h3>
         </div>
-
+        <div class="ratings-dashboard">
+          <i class="fas fa-star"></i>
+          <% rating = 0 %>
+          <% numberRatings = 0 %>
+          <% @reviews.each do |review| %>
+            <% rating = rating + review.rating.to_f %>
+            <% numberRatings += 1 %>
+          <% end %>
+          <p><%= rating / numberRatings %>/5</p>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="dash-square my-portfolio">
-
+        <div class="car-card-title">
+          <div class="green-line"></div>
+          <h3 class="title-show">Your cars</h3>
+        </div>
+        <table style="width:100%">
+          <tr>
+            <th>Car</th>
+            <th>Year</th>
+            <th>Fuel</th>
+            <th>N. bookings</th>
+            <th>Price/day</th>
+          </tr>
+          <% @cars.each do |car| %>
+          <tr>
+            <td><%= car.brand %> <%= car.model %></td>
+            <td><%= car.year %></td>
+            <td><%= car.fuel_type %></td>
+            <td><%= numberBookings %></td>
+            <td><%= car.price_per_day %>€</td>
+          </tr>
+          <% end %>
+        </table>
       </div>
     </div>
     <div class="row">

@@ -4,6 +4,16 @@
   justify-content: space-around;
 }
 
+.ratings-dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 180px;
+  align-items: center;
+  p {
+  margin: 0px;
+  }
+}
 .container {
   // height: 900px;
   width: 1080px;
@@ -32,9 +42,14 @@
   margin-left: 0;
   margin-right: 10px;
   overflow: scroll;
-  ul {
+  table {
     padding-left: 0px;
-    margin: 0px 20px 0px 20px
+  }
+  th {
+    text-align: center;
+  }
+  td {
+    padding-top: 10px;
   }
 }
 
@@ -47,6 +62,7 @@
 .my-portfolio {
   flex: 1 0 auto;
   height: 200px;
+  overflow: scroll;
 }
 
 .top-win-lose {
