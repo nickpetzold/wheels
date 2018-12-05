@@ -1,0 +1,9 @@
+<div class="booking-form">
+  <%= simple_form_for [@car, @booking] do |f| %>
+  <div class="form-inline text-center"><%= f.input :date_from, as: :string, input_html: { class: 'special' }%></div>
+  <div class="form-inline text-center"><%= f.input :date_to, as: :string%></div>
+  <% f.hidden_field :title, value: "some value" %>
+  <h4 class= "text-center">Price:</h4><h4 id= "rent-price"><strong></strong></h4>
+  <div class="rent-button"><%= f.button :submit, "Change Booking", class: "btn btn-primary show-button" %></div>
+  <% end %>
+</div>

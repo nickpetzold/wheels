@@ -2,9 +2,32 @@
   <div class="container">
     <div class="row">
       <div class="dash-square portfolio portfolio-vals">
-
+        <div class="car-card-title">
+          <div class="green-line"></div>
+          <h3 class="title-show">Your Bookings</h3>
+        </div>
+        <table style="width:100%">
+          <tr>
+            <th>Car</th>
+            <th>User</th>
+            <th>Details</th>
+            <th>Dates</th>
+          </tr>
+          <% @bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.car.brand %> <%= booking.car.model %></td>
+            <td><%= booking.user.first_name.capitalize %> <%= booking.user.last_name.capitalize %></td>
+            <td><%= booking.price %>€</td>
+            <td><%= booking.date_from %> - <%= booking.date_to %></td>
+          </tr>
+          <% end %>
+        </table>
       </div>
       <div class="dash-square portfolio portfolio-stats">
+        <div class="car-card-title">
+          <div class="green-line"></div>
+          <h3 class="title-show">Your Rating</h3>
+        </div>
 
       </div>
     </div>
