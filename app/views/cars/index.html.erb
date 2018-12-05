@@ -1,7 +1,7 @@
 <div class="cars-wrapper">
     <div class="cars-container">
       <% @cars.each do |car| %>
-      <div class="product">
+      <div id="car-<%=car.id%>"class="product">
         <%= image_tag car.photo, class: "index-product-image hidden-xs" %>
         <div class='product-body'>
           <h3><%= link_to car.brand, car_path(car) %></h3>
@@ -37,5 +37,4 @@
      ></div>
    </div>
 </div>
-
 
