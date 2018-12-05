@@ -1,17 +1,21 @@
 .car-wraper {
-  // display: flex;
-  // align-items: center;
-  // flex-direction: column;
-  // width: 100%;
-  padding: 30px;
-  padding-top: 20px;
+  margin: 0px !important;
+  padding-top: 0px;
   background-color: white;
-  // width: 60%;
+}
+
+.row {
+  margin-bottom: 0px;
 }
 
 .car-details p {
   margin-left: 20px;
   margin-right: 20px;
+  float: left;
+}
+
+.review-list {
+  padding-left: 0px;
 }
 
 .review-wraper ul {
@@ -20,56 +24,61 @@
   }
 
 .show-title-wraper {
-  margin-bottom: 30px solid transparent;
+  margin-bottom: 0px;
+  background-color: white;
 }
 
 .show-card {
   // display: flex;
-  justify-content: center;
+  // justify-content: center;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 .car-wraper {
+  margin-top: 0 !important;
   align-items: center;
 }
 
 .image-show {
-  height: 50vh;
+  height: 60vh;
   // width: 60%;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   // border: 10px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-top: 15px solid transparent;
+  // border-bottom: 15px solid transparent;
+  // border-top: 15px solid transparent;
+  margin-left: 30px;
 }
 
 .title-show {
   margin: 0px;
   padding: 0px;
+  padding-left: 10px;
+  width: 100%;
+  border-bottom: 3px solid $light-gray;
 }
 
 .car-card-title {
   display: flex;
-  border-bottom: 1px solid gray;
-  margin: 15px 20px 15px 20px;
+  // border-bottom: 1px solid gray;
+  margin: 15px 20px 0px 20px;
 }
 
 .green-line {
   width: 50px;
-  border-bottom: 3px solid #60CD44;
+  border-bottom: 3px solid $green;
 }
 
 .text-show {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   justify-content: space-between;
   padding: 20px;
-  h4 {
-    margin-top: 0px;
-  }
+  padding-left: 35px;
+  background-color: white;
+
 }
 
 .rent-button {
@@ -89,4 +98,10 @@
 
 .booking-form {
   padding-top: 10px;
+}
+
+small {
+  i{
+  color: rgb(207,181,59);
+  }
 }

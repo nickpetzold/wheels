@@ -2,7 +2,7 @@
   <div class="show-title-wraper">
     <div class="car-card-title">
       <div class="green-line"></div>
-      <h1 class="title-show"><%= @car.brand %> <%= @car.model %></h1>
+      <div class="title-show"><h1><%= @car.brand %> <%= @car.model %></h1></div>
     </div>
   </div>
   <div class="row car-wraper">
@@ -10,11 +10,22 @@
     <!-- linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), -->
     <%#= image_tag "audia3.jpg", width: 500, class: "image-show" %>
     <div class="col-xs-12 col-md-6 text-show">
+      <div class="booking-form">
+        <h4 class="text-center"><strong>Book Now</strong></h4>
+        <%= simple_form_for [@car, @booking] do |f| %>
+        <div class="form-inline text-center"><%= f.input :date_from, as: :string, input_html: { class: 'special' }%></div>
+        <div class="form-inline text-center"><%= f.input :date_to, as: :string%></div>
+        <% f.hidden_field :title, value: "some value" %>
+        <h4 class= "text-center">Price:</h4><h4 id= "rent-price"><strong></strong></h4>
+        <div class="rent-button"><%= f.button :submit, "Book this car", class: "btn btn-success show-button" %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row car-wraper">
+    <div class="col-xs-12 col-md-12 text-show">
       <div class="car-details">
-        <div class="car-card-title">
-          <div class="green-line"></div>
-          <h4>Details</h4>
-        </div>
+        <h4>Details</h4></div>
         <p><strong>Segment:</strong> <%= @car.car_type.car_type.capitalize %> | <strong>Number of seats:</strong> <%= @car.passengers %></p>
         <p><strong>City:</strong> <%= @car.city.capitalize %> | <strong>Price per day:</strong> <%= @car.price_per_day %>€</p>
         <p><strong>Power:</strong> <%= @car.horsepower %> hp | <strong>Fuel:</strong> <%= @car.fuel_type.capitalize %></p>
@@ -22,36 +33,33 @@
         <p><strong>Owner:</strong> <%= @car.user.first_name.capitalize %> <%= @car.user.last_name.capitalize %></p>
       </div>
     </div>
-  </div>
-<div class="map-wraper">
-  <div
-    id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="col-xs-12 col-md-12 text-show">
+      <div class="car-details">
+        <h4>Reviews</h4></div>
+        <ul class="review-list">
+          <% if @reviews.count == 0 %>
+          <p><%= "No Reviews for this car" %> </p>
+          <% else %>
+          <% @reviews.each do |review| %>
+          <li class="list-group-item">
+              <h4><strong><%= review.title %></strong> - <small>
+              <% count = 0 %>
+              <% 5.times do %>
+              <% if review.rating > count %>
+              <i class="fas fa-star"></i>
+              <% else %>
+              <i class="far fa-star"></i>
+              <% end %>
+              <% count += 1 %>
+              <% end %>
+            </small></h4>
+
+          </li>
+          <p><%= review.content %></p>
+          <% end %>
+          <% end %>
+        </ul>
+      </div>
     </div>
-</div>
-<div class="booking-form">
-  <%= simple_form_for [@car, @booking] do |f| %>
-  <div class="form-inline text-center"><%= f.input :date_from, as: :string, input_html: { class: 'special' }%></div>
-  <div class="form-inline text-center"><%= f.input :date_to, as: :string%></div>
-  <% f.hidden_field :title, value: "some value" %>
-  <h4 class= "text-center">Price:</h4><h4 id= "rent-price"><strong></strong></h4>
-  <div class="rent-button"><%= f.button :submit, "Book this car", class: "btn btn-primary show-button" %></div>
-  <% end %>
-</div>
-<div class="review-wraper">
-  <div class="car-card-title">
-    <div class="green-line"></div>
-    <h3 class="title-show">Reviews</h3>
   </div>
-  <ul>
-    <% if @reviews.count == 0 %>
-    <p><%= "No Reviews for this car" %> </p>
-    <% else %>
-    <% @reviews.each do |review| %>
-    <span><%= review.rating %>/5 - <%= review.content %> |</span>
-    <% end %>
-    <% end %>
-  </ul>
- </div>
 </div>
