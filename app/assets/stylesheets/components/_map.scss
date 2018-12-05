@@ -3,4 +3,45 @@
     height: 100vh;
     position: sticky !important;
     top: 0 !important;
+    margin-right: 100px;
+}
+
+.mapboxgl-popup {
+  max-width: 400px;
+}
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  h1 {color: $gray;
+      font-size: 24px;
+      margin: 7px;
+  }
+  h2 {color: $mid-gray;
+      font-size: 18px;
+      margin: 7px;
+  }
+  h3 {color: $light-gray;
+      font-size: 14px;
+      margin: 7px;
+  }
+}
+
+.container-marker {
+  justify-content: center;
+}
+
+.container-marker-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.marker-photo {
+  height: 200px;
+  width: 280px;
+}
+
+#button-marker {
+  font-size: 20px;
+  border-radius: none;
 }
