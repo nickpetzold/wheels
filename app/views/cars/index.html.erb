@@ -1,47 +1,27 @@
 <div class="cars-wrapper">
-  <div class="container">
-    <% @cars.each do |car| %>
-    <%= link_to car_path(car) do %>
-    <div class="row">
-      <div class="car-card">
-        <div class="car">
-          <%= image_tag "#{car.photo}", class: "car-image" %>
-          <div class="car-details">
-            <h3><%= car.brand %></h3>
-          </div>
-          <div class="car-details">
-            <h3><%= car.model %></h3>
-          </div>
-          <div class="car-details">
-            <h3><%= car.horsepower %> HP </h3>
-          </div>
-          <div class="car-details">
-            <h3><%= car.fuel_type.capitalize %></h3>
-          </div>
-          <div class="car-details">
-            <h3><%= car.city %></h3>
-          </div>
-          <div class="car-details">
-            <h3>
-              <% car.passengers.times do %>
-              <i class="fas fa-user"></i>
-              <% end %>
-            </h3>
-          </div>
-          <div class="car-details">
-            <h3><%= car.price_per_day.round %> EUR </h3>
-          </div>
+    <div class="cars-container">
+      <% @cars.each do |car| %>
+      <div class="product">
+        <%= image_tag "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-a3-1.jpg?itok=A0NbYXyS", class: "product-image hidden-xs" %>
+        <div class='product-body'>
+          <h3><%= link_to car.brand, car_path(car) %></h3>
+          <p><%= link_to car.model, car_path(car) %></p>
         </div>
+        <ul class="hidden-sm hidden-xs">
+          <li><%= link_to "#{car.price_per_day.to_i}€ per day", car_path(car) %></li>
+          <li><%= link_to car.city, car_path(car) %></li>
+          <li><%= link_to car.country, car_path(car) %></li>
+        </ul>
       </div>
+      <% end %>
     </div>
-    <% end %>
-    <% end %>
-  </div>
-  <div
-  id="map"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+    <div class="map-container">
+     <div
+     id="map"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+     ></div>
+   </div>
 </div>
 
 

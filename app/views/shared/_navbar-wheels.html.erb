@@ -1,0 +1,16 @@
+<div class="navbar-croker">
+  <div class="content-container">
+    <a href="/">
+      <%= image_tag "logo2.png", alt: "logo", class: "logo" %>
+    </a>
+    <div class="tabs-button-container">
+      <div class="navbar-tabs">
+        <%= link_to 'Cars', cars_path, class: "active"  %>
+        <%= link_to 'Dashboard', dashboard_path %>
+      </div>
+      <div class="right-content">
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+    </div>
+  </div>
+</div>
