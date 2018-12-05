@@ -31,7 +31,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user_id: current_user)
     @reviews = Review.where(booking_id: @bookings)
     @cars = Car.where(user_id: current_user)
-    @booking = Booking.where(car_id: @cars)
   end
 
   private

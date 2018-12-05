@@ -45,12 +45,21 @@
   table {
     padding-left: 0px;
   }
-  th {
-    text-align: center;
-  }
   td {
     padding-top: 10px;
   }
+}
+
+th {
+    text-align: center;
+}
+
+tr {
+  text-align: center;
+}
+
+.table-car-brand {
+  text-align: left;
 }
 
 .portfolio-stats {
