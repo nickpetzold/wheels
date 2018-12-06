@@ -6,7 +6,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
+    @review = Review.new(review_params)
+    @review.booking = Booking.find(params[:booking_id])
+    @review.save
   end
 
   def edit
