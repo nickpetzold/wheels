@@ -1,0 +1,11 @@
+<h1>Hello. This is reviews new</h2>
+
+
+<!-- Form to require params for review.  Permissions: Title content and rating -->
+
+<%= simple_form_for [@booking, @review] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content  %>
+  <%= f.input :rating  %>
+  <%= f.submit "Add a review", id: "sweet-alert-demo", class: "btn btn-success" %>
+<% end %>

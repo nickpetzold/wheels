@@ -1,18 +1,29 @@
 class CarsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
 
   layout "map", only: [:index]
 
   def index
-    @cars = Car.all
-    @markers = @cars.map do |car|
-      {
-        lng: car.longitude,
-        lat: car.latitude,
-        id: car.id,
-        infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
-      }
+    if params["query"].present?
+      @cars = Car.search_by_city(params["query"])
+      @markers = @cars.map do |car|
+        {
+          lng: car.longitude,
+          lat: car.latitude,
+          id: car.id,
+          infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
+        }
+      end
+    else
+      @cars = Car.all
+      @markers = @cars.map do |car|
+        {
+          lng: car.longitude,
+          lat: car.latitude,
+          id: car.id,
+          infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
+        }
+      end
     end
   end
 
@@ -20,12 +31,6 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @reviews = @car.reviews
     @booking = Booking.new
-    # @markers = @car.map do |car|
-    #   {
-    #     lng: car.longitude,
-    #     lat: car.latitude
-    #   }
-    # end
   end
 
   def new

@@ -13,8 +13,8 @@ function picker () {
     dateFormat: 'Y-m-d',
     disable: [
         {
-            from: "2018-12-10",
-            to: "2018-12-20"
+            from: " ",
+            to: " "
         }],
     onChange: function(_, selectedDate) {
       if (selectedDate === '') {

@@ -1,4 +1,5 @@
 class Car < ApplicationRecord
+  include PgSearch
   belongs_to :car_type
   belongs_to :user, optional: true
   has_many :bookings
@@ -11,7 +12,7 @@ class Car < ApplicationRecord
   validates :fuel_type, presence: true, inclusion: { in: %w[diesel petrol electric hybrid gas] }
   validates :price_per_day, presence: true
   validates :city, presence: true
-  validates :zipcode, presence: true
+  # validates :zipcode, presence: true
   validates :country, presence: true
   validates :car_type_id, presence: true
   validates :address, presence: true
@@ -19,4 +20,10 @@ class Car < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  pg_search_scope :search_by_city,
+    against: [:city],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
