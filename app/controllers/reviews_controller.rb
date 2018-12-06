@@ -26,7 +26,6 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       redirect_to dashboard_path(created: true)
     else
-      raise
       redirect_to edit_booking_review_path
     end
   end
