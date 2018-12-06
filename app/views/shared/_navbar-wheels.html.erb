@@ -8,9 +8,15 @@
         <%= link_to 'Cars', cars_path, class: "active"  %>
         <%= link_to 'Dashboard', dashboard_path %>
       </div>
-      <div class="right-content">
-        <i class="fas fa-ellipsis-v"></i>
-      </div>
     </div>
+      <div class="right-content">
+        <% if current_user.nil? %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "sign-up my-btn", style: "border: 3px solid #60CD44; background-color: white; color: #60CD44;" %>
+        <%= link_to "Log In", new_user_session_path, method: :get, class: "log-in my-btn", style: "border: 3px solid #60CD44; color: white;" %>
+        <% else  %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "sign-out my-btn", style: "border: 3px solid rgb(200,200,200); color: rgb(200,200,200); background-color: white" %>
+        <% end %>
+        <!-- <i class="fas fa-ellipsis-v"></i> -->
+      </div>
   </div>
 </div>
