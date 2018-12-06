@@ -11,7 +11,7 @@ class Car < ApplicationRecord
   validates :fuel_type, presence: true, inclusion: { in: %w[diesel petrol electric hybrid gas] }
   validates :price_per_day, presence: true
   validates :city, presence: true
-  validates :zipcode, presence: true
+  # validates :zipcode, presence: true
   validates :country, presence: true
   validates :car_type_id, presence: true
   validates :address, presence: true
