@@ -1,7 +1,7 @@
 <div class="container">
   <div class="show-title-wraper">
     <div class="car-card-title">
-      <div class="green-line"></div>
+      <div class="green-line"><%= image_tag @car.user.photo, class: "avatar-large", style: "margin-top: 20px" %></div>
       <div class="title-show"><h1><%= @car.brand %> <%= @car.model %></h1></div>
     </div>
   </div>
@@ -41,21 +41,30 @@
           <p><%= "No Reviews for this car" %> </p>
           <% else %>
           <% @reviews.each do |review| %>
-          <li class="list-group-item">
-              <h4><strong><%= review.title %></strong> - <small>
-              <% count = 0 %>
-              <% 5.times do %>
-              <% if review.rating > count %>
-              <i class="fas fa-star"></i>
-              <% else %>
-              <i class="far fa-star"></i>
-              <% end %>
-              <% count += 1 %>
-              <% end %>
-            </small></h4>
+          <div class="container-review">
+            <div class="review-avatar">
+              <%= image_tag review.booking.user.photo, class: "avatar-large" %>
+            </div>
 
-          </li>
-          <p><%= review.content %></p>
+            <div class="content-review">
+              <li class="list-group-item">
+                  <h4><strong><%= review.title %></strong> - <small>
+                  <% count = 0 %>
+                  <% 5.times do %>
+                  <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                  <% else %>
+                  <i class="far fa-star"></i>
+                  <% end %>
+                  <% count += 1 %>
+                  <% end %>
+                </small></h4>
+
+              </li>
+              <p><%= review.content %></p>
+              <p>- <em><%= "#{review.booking.user.first_name} #{review.booking.user.last_name}" %></em></p>
+            </div>
+          </div>
           <% end %>
           <% end %>
         </ul>
