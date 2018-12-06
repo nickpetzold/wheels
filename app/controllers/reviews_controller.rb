@@ -8,8 +8,11 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.booking = Booking.find(params[:booking_id])
-    @review.save
-    redirect_to dashboard_path
+    if @review.save
+      redirect_to dashboard_path(created: true)
+    else
+      redirect_to new_booking_review_path
+    end
   end
 
   def edit
@@ -20,7 +23,12 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     @review.update(review_params)
-    redirect_to dashboard_path
+    if @review.update(review_params)
+      redirect_to dashboard_path(created: true)
+    else
+      raise
+      redirect_to edit_booking_review_path
+    end
   end
 
   private
