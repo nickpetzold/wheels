@@ -5,7 +5,11 @@ class CarsController < ApplicationController
   layout "map", only: [:index]
 
   def index
-    @cars = Car.all
+    if params[:query].present?
+      @cars = Car.all.where(city: params[:query])
+    else
+      @cars = Car.all
+    end
     @markers = @cars.map do |car|
       {
         lng: car.longitude,
@@ -20,12 +24,6 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @reviews = @car.reviews
     @booking = Booking.new
-    # @markers = @car.map do |car|
-    #   {
-    #     lng: car.longitude,
-    #     lat: car.latitude
-    #   }
-    # end
   end
 
   def new
