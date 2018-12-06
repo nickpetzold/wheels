@@ -152,7 +152,6 @@ ADDRESSES = ["6th And Independence Ave Sw [Outdoor], Washington,DC -  Washington
 "17850 NW 57th Ave, Miami,FL -  Miami - USA",
 "18340 SW 137th Ave, Miami,FL -  Miami - USA",
 "18350 NE 18th Rd, Miami,FL -  Miami - USA",
-"1930 Opa Locks Blvd, Miami,FL -  Miami - USA",
 "20101 NW 2nd Ave, Miami,FL -  Miami - USA",
 "20315 Old Cutler Dr, Miami,FL -  Miami - USA",
 "2200 NW 36th St, Miami,FL -  Miami - USA",
