@@ -2,6 +2,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
 const mapElement = document.getElementById('map');
+const cards = document.querySelectorAll('.product');
 
 if (mapElement) { // only build a map if there's a div#map to inject into
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -36,6 +37,18 @@ if (mapElement) { // only build a map if there's a div#map to inject into
       .setHTML(marker.infoWindow.content))
       .addTo(map);
 
+
+  cards.forEach((card, index) => {
+    const marker = markers[index];
+    card.addEventListener('mouseover', () => {
+
+    });
+    card.addEventListener('mouseout', () => {
+
+    });
+  })
+
+
 document.getElementById("car-"+ marker.id).onclick = function(e) {
   if(this.dataset.opened == undefined || this.dataset.opened == "false") {
     this.setAttribute('data-opened', true)
@@ -47,4 +60,5 @@ document.getElementById("car-"+ marker.id).onclick = function(e) {
 }
   });
 }
+
 
