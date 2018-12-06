@@ -1,4 +1,4 @@
-<div class="background">
+<!-- <div class="background">
  <div class="banner">
   <div class="banner-content">
     <h1>Find your perfect car today...</h1>
@@ -8,6 +8,13 @@
     </form>
   </div>
 </div>
-</div>
+</div> -->
 
+<%= form_tag cars_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Enter a city"
+  %>
+<% end %>
 
