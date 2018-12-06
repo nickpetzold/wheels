@@ -1,22 +1,29 @@
 class CarsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
 
   layout "map", only: [:index]
 
   def index
-    if params[:query].present?
-      @cars = Car.all.where(city: params[:query])
+    if params["query"].present?
+      @cars = Car.search_by_city(params["query"])
+      @markers = @cars.map do |car|
+        {
+          lng: car.longitude,
+          lat: car.latitude,
+          id: car.id,
+          infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
+        }
+      end
     else
       @cars = Car.all
-    end
-    @markers = @cars.map do |car|
-      {
-        lng: car.longitude,
-        lat: car.latitude,
-        id: car.id,
-        infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
-      }
+      @markers = @cars.map do |car|
+        {
+          lng: car.longitude,
+          lat: car.latitude,
+          id: car.id,
+          infoWindow: { content: render_to_string(partial: "/cars/map_window", locals: { car: car }) }
+        }
+      end
     end
   end
 
