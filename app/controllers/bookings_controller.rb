@@ -34,18 +34,16 @@ class BookingsController < ApplicationController
     @reviews = Review.where(booking_id: @bookings)
     @cars = Car.where(user_id: current_user)
     # This is a function to get the total profit
-    @number_of_days = 0
     @total_profit = 0
     @bookings.each do |booking|
       @total_profit = @total_profit + booking.price
-      @number_of_days = (booking.date_to - booking.date_from).to_i
     end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to dashboard_path
+    redirect_to cocktails_path
   end
 
   private

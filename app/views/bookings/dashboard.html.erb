@@ -8,7 +8,7 @@
         </div>
         <div class="product">
           <div class='product-body bookings-list'>
-            <h3></h3>
+            <h3>Car</h3>
           </div>
           <ul class="list-inline product-controls cards-list-dashboard bookings-dashboard">
             <li>Price</li>
@@ -58,7 +58,7 @@
           <% else %>
             <div class="rating-group">
               <i class="fas fa-star"></i>
-              <p><%= (rating / number_ratings).round() %>/5</p>
+              <p><%= rating / number_ratings %>/5</p>
             </div>
           <% end %>
         </div>
@@ -72,7 +72,7 @@
         </div>
         <div class="product">
           <div class='product-body'>
-            <h3> </h3>
+            <h3>Car</h3>
           </div>
           <ul class="list-inline product-controls">
             <li>Nº Bookings</li>
@@ -88,7 +88,7 @@
           <ul class="list-inline product-controls">
             <li><%= car.bookings.all.length %></li>
             <li><%= car.price_per_day.to_i %>€</li>
-            <li><%= @number_of_days * car.price_per_day.to_i %>€</li>
+            <li><%= car.bookings.all.length * car.price_per_day.to_i %>€</li>
           </ul>
         </div>
         <% end %>
