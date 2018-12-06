@@ -30,7 +30,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   }
   markers.forEach((marker) => {
     var popup = new mapboxgl.Popup({offset: 25})
-    new mapboxgl.Marker()
+    new mapboxgl.Marker({color: "#60CD44"})
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup // add popups
       .setHTML(marker.infoWindow.content))
