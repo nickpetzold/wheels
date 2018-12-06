@@ -10,3 +10,38 @@ text-decoration: none;
 .sign-up{
   background-color: $green;
 }
+
+.delete-btn {
+  background-color: #f7f7f7;
+  padding: 0 10px !important;
+}
+
+.booking-button {
+  margin-right: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #d8d8d8;
+}
+
+.btn-edit {
+  background-color: $green;
+  padding: 0 10px !important;
+}
+
+.btn-edit:hover {
+  background-color: #54af3b;
+}
+
+.btn-add-review {
+  background-color: $green;
+  padding: 0 10px !important;
+}
+
+.btn-add-review:hover {
+  background-color: #54af3b;
+}
+
+.add-review-button-past {
+  margin-right: 0px;
+}
