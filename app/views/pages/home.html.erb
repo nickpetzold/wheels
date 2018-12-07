@@ -1,23 +1,52 @@
 <div class="background">
- <div class="banner">
-  <div class="banner-content">
-    <h1 style="text-shadow: 2px 2px rgb(0,0,0,0.4);">Find your perfect car today...</h1>
-    <%= form_tag cars_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-      placeholder: "Enter a city"
-      %>
-      <%= button_tag "Find Cars", class: "btn btn-success my-btn" %>
-      <% end %>
-    <!-- <form action="/cars" class="form-inline">
-      <input type="text" class="form-control input-lg" placeholder="Enter a city">
-      <input type="submit" class="btn btn-success btn-lg" value="Search">
-    </form> -->
+  <div class="banner">
+    <div class="banner-content">
+      <h1 style="text-shadow: 2px 2px rgb(0,0,0,0.4);">Find your perfect car today...</h1>
+      <%= form_tag cars_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+        placeholder: "Enter a city"
+        %>
+        <%= button_tag "Find Cars", class: "btn btn-success my-btn" %>
+        <% end %>
+      <!-- <form action="/cars" class="form-inline">
+        <input type="text" class="form-control input-lg" placeholder="Enter a city">
+        <input type="submit" class="btn btn-success btn-lg" value="Search">
+      </form> -->
+    </div>
   </div>
 </div>
+
+<div class="container icons-container">
+  <div class="icon-cards">
+    <div class="text-center icon-cards-title">
+      <h2>Who We Are</h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="card text-center">
+          <i class="fas fa-globe-americas fa-3x"></i>
+          <p>Rent a Car Anywhere</p>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="card text-center">
+          <i class="fas fa-car fa-3x"></i>
+          <p>Loan your Car</p>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="card text-center">
+          <i class="fas fa-money-bill-alt fa-3x"></i>
+          <p>Earn Passive Income</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<hr>
 
 <div class="container lp-container">
   <h2>Our latest offers</h2>

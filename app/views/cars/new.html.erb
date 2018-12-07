@@ -14,7 +14,7 @@
           <%= f.input :year %>
         </div>
         <div class="right-form">
-          <%= f.input :fuel_type, placeholder: "diesel petrol electric hybrid gas" %>
+          <%= f.input :fuel_type, collection: %w[ diesel petrol electric hybrid gas ] %>
         </div>
       </div>
       <div class="form-row">
@@ -25,14 +25,7 @@
           <%= f.association :car_type, label_method: :car_type, value_method: :id%>
         </div>
       </div>
-      <div class="form-row">
-        <div class="left-form">
-          <%= f.input :city %>
-        </div>
-        <div class="right-form">
-          <%= f.input :zipcode %>
-        </div>
-      </div>
+
       <div class="form-row">
         <div class="left-form">
           <%= f.input :passengers %>
@@ -46,9 +39,18 @@
           <%= f.input :price_per_day %>
         </div>
         <div class="right-form">
-          <%= f.country_select :country %>
+          <%= f.input :photo, placeholder: "Paste an URL of your photo" %>
         </div>
       </div>
+      <div class="form-row">
+        <div class="left-form">
+          <%= f.input :city %>
+        </div>
+        <div class="right-form">
+          <%= f.input :zipcode %>
+        </div>
+      </div>
+      <%= f.country_select :country %>
       <%#= f.input :address %>
       <div class="form-submit">
         <%= f.button :submit, class: "btn btn-success" %>
