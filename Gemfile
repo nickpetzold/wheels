@@ -19,7 +19,7 @@ gem 'devise'
 gem "geocoder"
 gem 'pg_search'
 gem 'faker'
-gem 'country_select', '~> 3.1r'
+gem 'country_select', '~> 3.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
