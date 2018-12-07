@@ -45,7 +45,10 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to dashboard_path
+    respond_to do |format|
+      format.html {redirect_to dashboard_path}
+      format.json { head :no_content }
+    end
   end
 
   private
