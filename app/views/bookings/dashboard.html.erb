@@ -46,9 +46,9 @@
             </div>
           <% end %>
         <% end %>
+        <!-- This puts a text if user doesn't have bookings ongoing -->
         <% if nr_bookings_ongoing == 0 %>
          <h4 class="text-center">You have no Bookings ongoing!</h4>
-
         <% end %>
       </div>
       <!-- This shows total profit and media rating -->
@@ -74,6 +74,7 @@
             <% rating = rating + review.rating.to_f %>
             <% number_ratings += 1 %>
           <% end %>
+          <!-- This puts a text if user doesn't have ratings -->
           <% if number_ratings == 0 %>
             <h4>You have no ratings, yet!</h4>
           <% else %>
@@ -90,7 +91,11 @@
       <div class="dash-square my-portfolio">
         <div class="car-card-title">
           <div class="green-line"></div>
-          <h3 class="title-show">Your Cars</h3>
+          <h3 class="title-show">Your Cars
+          <%#= link_to "Add Car", new_car_path(current_user), class: "btn btn-add" %>
+          <%= link_to new_car_path(current_user) do %>
+            <i class="far fa-plus-square icon-add-cars"></i>
+          <% end %>
         </div>
         <div class="product">
           <div class='product-body'>
@@ -122,10 +127,10 @@
             </ul>
           </div>
         <% end %>
+        <!-- This puts a text if user doesn't have cars -->
         <% if @number_cars == 0 %>
         <h4><%= You have no cares to lend! %></h4>
         <% end %>
-        <%= link_to "Add Car", new_car_path(current_user), class: "btn btn-add" %>
       </div>
     </div>
     <!-- This will show past bookings -->
@@ -167,6 +172,7 @@
             </div>
           <% end %>
           <% end %>
+          <!-- This puts a text if user doesn't have bookings completed -->
           <% if nr_bookings_past == 0 %>
             <h4 class="text-center">You have no Bookings completed!</h4>
         <% end %>
