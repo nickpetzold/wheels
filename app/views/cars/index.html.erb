@@ -4,8 +4,8 @@
       <div id="car-<%=car.id%>"class="product">
         <%= image_tag car.photo, class: "index-product-image hidden-xs" %>
         <div class='product-body'>
-          <h3><%= link_to car.brand, car_path(car) %></h3>
-          <p><%= link_to car.model, car_path(car) %></p>
+          <h3><%= link_to car.brand, car_path(car), target: "_blank" %></h3>
+          <p><%= link_to car.model, car_path(car), target: "_blank" %></p>
           <li class="list-group-item">
             <small>
               <% count = 0 %>
@@ -22,9 +22,9 @@
           </li>
         </div>
         <ul class="hidden-sm hidden-xs">
-          <li><%= link_to "#{car.price_per_day.to_i}€ per day", car_path(car) %></li>
-          <li><%= link_to car.city, car_path(car) %></li>
-          <li><%= link_to car.country, car_path(car) %></li>
+          <li><%= link_to "#{car.price_per_day.to_i}€ per day", car_path(car), target: "_blank" %></li>
+          <li><%= link_to car.city, car_path(car), target: "_blank" %></li>
+          <li><%= link_to car.country, car_path(car), target: "_blank" %></li>
         </ul>
       </div>
       <% end %>
