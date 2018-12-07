@@ -19,27 +19,6 @@
         </div>
         <% nr_bookings_ongoing = 0 %>
         <% @bookings.each do |booking| %>
-
-        <div class="product product-list">
-          <div class='product-body bookings-list'>
-            <h3><%= booking.car.brand %> <%= booking.car.model %></h3>
-          </div>
-          <ul class="list-inline product-controls cards-list-dashboard bookings-dashboard">
-            <li><%= booking.price %>€</li>
-            <li style= "width: 90%;"><%= Date::MONTHNAMES[booking.date_to.month] %> <%= booking.date_from.day %>, <%= booking.date_from.year %> to <%= Date::MONTHNAMES[booking.date_to.month] %> <%= booking.date_to.day %></li>
-            <li id="bookings-buttons-column">
-                <div class="booking-button">
-                  <%= link_to "Edit", edit_booking_path(booking.id), class: "btn btn-edit" %>
-                </div>
-                <div class="booking-button">
-                  <%= form_tag booking_path(booking), method: :delete do |f| %>
-                  <%= submit_tag "Delete", class: "btn delete-btn sweet-alert-demo" %>
-                  <% end %>
-                </div>
-            </li>
-          </ul>
-        </div>
-
           <% if booking.date_to > Date.today %>
             <% nr_bookings_ongoing = nr_bookings_ongoing + 1 %>
             <div class="product product-list">
