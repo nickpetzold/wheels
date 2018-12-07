@@ -13,9 +13,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.price = (@booking.date_to - @booking.date_from).to_i * @car.price_per_day
     if @booking.save
-      redirect_to cars_path
+      redirect_to dashboard_path(current_user)
     else
-      redirect_to car_path(@car)
+      render "cars#show"
     end
   end
 

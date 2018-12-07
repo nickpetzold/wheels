@@ -86,7 +86,7 @@
       <div class="dash-square my-portfolio">
         <div class="car-card-title">
           <div class="green-line"></div>
-          <h3 class="title-show">Your cars</h3>
+          <h3 class="title-show">Your Cars</h3>
         </div>
         <div class="product">
           <div class='product-body'>
@@ -99,7 +99,9 @@
             <li id="bookings-buttons-column" style="width: 410px";>  </li>
           </ul>
         </div>
+        <% @number_cars = 0 %>
         <% @cars.each do |car| %>
+        <% @number_cars += 1 %>
           <div class="product product-list">
             <div class='list-inline product-body'>
               <li><%= car.brand %> <%= car.model %></li>
@@ -116,6 +118,10 @@
             </ul>
           </div>
         <% end %>
+        <% if @number_cars == 0 %>
+        <h4><%= You have no cares to lend! %></h4>
+        <% end %>
+        <%= link_to "Add Car", new_car_path(current_user), class: "btn btn-add" %>
       </div>
     </div>
     <!-- This will show past bookings -->
