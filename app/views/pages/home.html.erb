@@ -19,5 +19,54 @@
 </div>
 
 
+<div class="container lp-container">
+  <h2>Our latest offers</h2>
+  <div class="row">
+
+    <% @cars.sample(3).each do |car| %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="landing-card">
+        <div class="card-picture">
+          <div class="lp-product-image hidden-xs" style="background-image: url(<%= image_url car.photo %>);">
+          </div>
+        </div>
+        <div class='lp-car-info text-center'>
+          <div class="left-info">
+            <h3><%= link_to car.brand, car_path(car) %></h3>
+            <p><%= link_to car.model, car_path(car) %></p>
+            <li class="list-group-item">
+              <small>
+                <% count = 0 %>
+                <% rating = rand(2..5) %>
+                <% 5.times do %>
+                <% if rating > count %>
+                <i class="fas fa-star"></i>
+                <% else %>
+                <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+                <% end %>
+              </small>
+            </li>
+          </div>
+          <div class="right-info">
+           <ul class="list-group">
+            <li class="list-group-item"><%= link_to "#{car.price_per_day.to_i}€ per day", car_path(car) %></li>
+            <li class="list-group-item"><%= link_to car.city, car_path(car) %></li>
+            <li class="list-group-item"><%= link_to car.country, car_path(car) %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>
+</div>
+
+
+
+
+
 
 
