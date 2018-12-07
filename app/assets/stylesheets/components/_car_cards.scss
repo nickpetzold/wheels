@@ -1,7 +1,7 @@
 .cars-wrapper {
   display: flex;
   flex-direction: row;
-  margin: 30px 50px 30px 50px;
+  margin: 5px 50px 30px 50px;
 }
 
 .cars-container {
@@ -28,9 +28,9 @@
     }
   }
   a {
-      text-decoration: none;
-      color: $gray;
-    }
+    text-decoration: none;
+    color: $gray;
+  }
   ul {
     margin-top: 10px;
     padding-top: 10px;
@@ -59,7 +59,7 @@
 /* Product image */
 .index-product-image {
   border-radius: 2px;
-      margin: 5px 40px 5px 10px;
+  margin: 5px 40px 5px 10px;
   width: 175px;
 }
 
@@ -104,4 +104,9 @@
 }
 .product-upvote:hover .product-arrow {
   border-bottom: 9px solid #5898f1;
+}
+.search-container {
+  width: 1100px;
+  margin-left: 170px;
+  margin-top: 40px;
 }

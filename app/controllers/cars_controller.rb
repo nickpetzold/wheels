@@ -5,7 +5,7 @@ class CarsController < ApplicationController
 
   def index
     if params["query"].present?
-      @cars = Car.search_by_city(params["query"])
+      @cars = Car.search_by_city_brand_model(params["query"])
       @markers = @cars.map do |car|
         {
           lng: car.longitude,

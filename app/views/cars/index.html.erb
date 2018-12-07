@@ -1,3 +1,13 @@
+  <div class="search-container">
+    <%= form_tag cars_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+        placeholder: "Enter a city, brand and/or model"
+        %>
+        <%= button_tag "Find Cars", class: "btn btn-success my-btn", style: "display: none;" %>
+        <% end %>
+  </div>
 <div class="cars-wrapper">
     <div class="cars-container">
       <% @cars.each do |car| %>
