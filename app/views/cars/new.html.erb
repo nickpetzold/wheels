@@ -1,16 +1,58 @@
-<%= simple_form_for @car do |f| %>
-      <%= f.input :brand%>
-      <%= f.input :model %>
-      <%= f.input :year %>
-      <%= f.input :color %>
-      <%= f.input :passengers %>
-      <%= f.input :horsepower %>
-      <%= f.input :fuel_type %>
-      <%= f.association :car_type %>
-      <%= f.input :city %>
-      <%= f.input :zipcode %>
-      <%#= f.input :country %>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col sm offset-4">
+    <%= simple_form_for @car do |f| %>
+      <div class="form-row">
+        <div class="left-form">
+          <%= f.input :brand %>
+        </div>
+        <div class="right-form">
+          <%= f.input :model%>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="left-form">
+          <%= f.input :year %>
+        </div>
+        <div class="right-form">
+          <%= f.input :fuel_type, placeholder: "diesel petrol electric hybrid gas" %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="left-form">
+          <%= f.input :color %>
+        </div>
+        <div class="right-form">
+          <%= f.association :car_type, label_method: :car_type, value_method: :id%>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="left-form">
+          <%= f.input :city %>
+        </div>
+        <div class="right-form">
+          <%= f.input :zipcode %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="left-form">
+          <%= f.input :passengers %>
+        </div>
+        <div class="right-form">
+          <%= f.input :horsepower %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="left-form">
+          <%= f.input :price_per_day %>
+        </div>
+        <div class="right-form">
+          <%= f.country_select :country %>
+        </div>
+      </div>
       <%#= f.input :address %>
-      <%= f.input :price_per_day %>
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <div class="form-submit">
+        <%= f.button :submit, class: "btn btn-success" %>
+      </div>
     <% end %>
+  </div>
+</div>
