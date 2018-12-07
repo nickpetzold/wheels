@@ -31,7 +31,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   }
   markers.forEach((marker) => {
     var popup = new mapboxgl.Popup({offset: 25})
-    new mapboxgl.Marker({color: "#60CD44"})
+    const mapMarker = new mapboxgl.Marker({color: "#60CD44"})
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup // add popups
       .setHTML(marker.infoWindow.content))
@@ -41,7 +41,8 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   cards.forEach((card, index) => {
     const marker = markers[index];
     card.addEventListener('mouseover', () => {
-
+      mapMarker.setColor('#10CD77');
+      console.log(mapMarker)
     });
     card.addEventListener('mouseout', () => {
 
