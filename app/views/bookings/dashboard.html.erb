@@ -23,7 +23,11 @@
             <% nr_bookings_ongoing = nr_bookings_ongoing + 1 %>
             <div class="product product-list">
               <div class='product-body bookings-list'>
-                <h3><%= booking.car.brand %> <%= booking.car.model %></h3>
+                <h3>
+                  <%= link_to car_path(booking.car) do %>
+                    <%= booking.car.brand %> <%= booking.car.model %>
+                  <% end %>
+                </h3>
               </div>
               <ul class="list-inline product-controls cards-list-dashboard bookings-dashboard">
                 <li><%= booking.price.to_i %>€</li>
@@ -148,9 +152,9 @@
               </ul>
             </div>
           <% end %>
+          <% end %>
           <% if nr_bookings_past == 0 %>
             <h4 class="text-center">You have no Bookings completed!</h4>
-          <% end %>
         <% end %>
       </div>
      <!--  <div class="dash-square top-win-lose">
