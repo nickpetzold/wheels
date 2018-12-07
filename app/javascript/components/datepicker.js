@@ -35,8 +35,27 @@ function picker () {
 
 export { picker };
 
-// {
-//     altInput: true,
-//     altFormat: "F j, Y",
-//     dateFormat: "Y-m-d",
-// }
+
+
+
+// 1. Add event listener to the input
+// const romain = document.getElementById("booking_date_from");
+// romain.addEventListener("click", (event) => {
+//   console.log(event);
+//   console.log(event.currentTarget);
+// });
+
+// 2. console log the event
+
+// 3. Extract date/values
+
+// 4. Extract car price
+
+// 5. make calculation
+
+// 6. make html with resulting calculation
+
+// 7. Try to target the place on the html to apend (innerHTML)
+
+// 8. actualy apend!!!!!!!!
+

@@ -63,9 +63,9 @@
               <h4 class="text-center">You have no profit yet!</h4>
             <% else %>
               <i style="font-size: 41px;color: #60CD44;" class="fas fa-money-bill-alt"></i>
-              <p>500€</p>
+              <!-- <p>500€</p> -->
               <!-- This next line separates de number with dotes -->
-              <!-- <p><#%= number_with_precision(@total_profit, :precision => 1, :delimiter => ',') %>€</p> -->
+              <p><%= number_with_precision(@total_profit, :precision => 1, :delimiter => ',') %>€</p>
             <% end %>
           </div>
           <% rating = 0 %>
@@ -129,7 +129,7 @@
         <% end %>
         <!-- This puts a text if user doesn't have cars -->
         <% if @number_cars == 0 %>
-        <h4><%= You have no cares to lend! %></h4>
+        <h4 class="text-center"> You have no cars to lend </h4>
         <% end %>
       </div>
     </div>
