@@ -123,7 +123,7 @@
           </div>
         <% end %>
         <% if @number_cars == 0 %>
-        <h4><%= You have no cares to lend! %></h4>
+          <h4>You have no cars to lend</h4>
         <% end %>
         <%= link_to "Add Car", new_car_path(current_user), class: "btn btn-add" %>
       </div>
