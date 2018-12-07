@@ -13,9 +13,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.price = (@booking.date_to - @booking.date_from).to_i * @car.price_per_day
     if @booking.save
-      redirect_to cars_path
+      redirect_to dashboard_path(current_user)
     else
-      redirect_to car_path(@car)
+      render "cars#show"
     end
   end
 
@@ -34,18 +34,25 @@ class BookingsController < ApplicationController
     @reviews = Review.where(booking_id: @bookings)
     @cars = Car.where(user_id: current_user)
     # This is a function to get the total profit
-    @number_of_days = 0
+    @number_of_days = 1
     @total_profit = 0
     @bookings.each do |booking|
       @total_profit = @total_profit + booking.price
       @number_of_days = (booking.date_to - booking.date_from).to_i
+    end
+    @number_of_reviews = 0
+    @reviews.each do |review|
+      @number_of_reviews += 1
     end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to dashboard_path
+    respond_to do |format|
+      format.html {redirect_to dashboard_path}
+      format.json { head :no_content }
+    end
   end
 
   private

@@ -24,18 +24,20 @@ text-decoration: none;
   background-color: #d8d8d8;
 }
 
-.btn-edit {
+.product .btn-edit {
   background-color: $green;
   padding: 0 10px !important;
+  color: white;
 }
 
 .btn-edit:hover {
   background-color: #54af3b;
 }
 
-.btn-add-review {
+.product .btn-add-review {
   background-color: $green;
   padding: 0 10px !important;
+  color: white;
 }
 
 .btn-add-review:hover {
@@ -44,4 +46,13 @@ text-decoration: none;
 
 .add-review-button-past {
   margin-right: 0px;
+  color: white;
+}
+
+.btn-add {
+  background-color: $green;
+  padding: 0 10px !important;
+  margin-left: 29px;
+  margin-bottom: 9px;
+  color: white;
 }

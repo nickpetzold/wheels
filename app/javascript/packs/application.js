@@ -4,4 +4,3 @@ import './application.css';
 import { bindSweetAlertButtonDemo } from '../components/sweetalert';
 picker();
 bindSweetAlertButtonDemo();
-
