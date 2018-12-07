@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:edit, :update, :new, :create, :dashboard]
+  skip_before_action :authenticate_user!, only: [:edit, :update, :new]
 
   def new
     @car = Car.find(params[:car_id])
@@ -34,16 +34,17 @@ class BookingsController < ApplicationController
     @reviews = Review.where(booking_id: @bookings)
     @cars = Car.where(user_id: current_user)
     # This is a function to get the total profit
+    @number_of_days = 0
     @total_profit = 0
     @bookings.each do |booking|
       @total_profit = @total_profit + booking.price
+      @number_of_days = (booking.date_to - booking.date_from).to_i
     end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-
     respond_to do |format|
       format.html {redirect_to dashboard_path}
       format.json { head :no_content }

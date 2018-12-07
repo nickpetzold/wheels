@@ -1,20 +1,23 @@
-<!-- <div class="background">
+<div class="background">
  <div class="banner">
   <div class="banner-content">
-    <h1>Find your perfect car today...</h1>
-    <form action="/cars" class="form-inline">
-      <input type="text" class="form-control input-lg" placeholder="Enter a city">
-      <input type="submit" class="btn btn-success btn-lg" value="Search">
-    </form>
-  </div>
-</div>
-</div> -->
-
-<%= form_tag cars_path, method: :get do %>
-  <%= text_field_tag :query,
+    <h1 style="text-shadow: 2px 2px rgb(0,0,0,0.4);">Find your perfect car today...</h1>
+    <%= form_tag cars_path, method: :get do %>
+    <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Enter a city"
-  %>
-<% end %>
+      placeholder: "Enter a city"
+      %>
+      <%= button_tag "Find Cars", class: "btn btn-success my-btn" %>
+      <% end %>
+    <!-- <form action="/cars" class="form-inline">
+      <input type="text" class="form-control input-lg" placeholder="Enter a city">
+      <input type="submit" class="btn btn-success btn-lg" value="Search">
+    </form> -->
+  </div>
+</div>
+</div>
+
+
+
 
