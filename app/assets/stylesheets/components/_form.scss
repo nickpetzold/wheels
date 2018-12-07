@@ -1,0 +1,40 @@
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+.left-form {
+  width: 45%;
+}
+
+.right-form {
+  width: 45%;
+}
+
+.form-row-last {
+  justify-content: center;
+}
+
+.car_color {
+  display: flex;
+}
+
+.car_horsepower {
+  display: flex;
+}
+
+.car_zipcode {
+  display: flex;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.review_rating {
+  display: block;
+}
+
+#car_country {
+  width: 100%;
+}
