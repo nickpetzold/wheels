@@ -13,7 +13,7 @@ function bindSweetAlertButtonDemo() {
 
       swal({
         title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
+        text: "Once deleted, you will not be able to recover it!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
@@ -26,7 +26,7 @@ function bindSweetAlertButtonDemo() {
             url: `${url}.json`,
             type: "DELETE"
           }).done(function() {
-            swal("Poof! Your imaginary file has been deleted!", {
+            swal("Your booking has been deleted!", {
               icon: "success",
             }).then(() => {
               location.reload()
