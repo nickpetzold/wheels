@@ -22,7 +22,7 @@
           <% if booking.date_to > Date.today %>
             <% nr_bookings_ongoing = nr_bookings_ongoing + 1 %>
             <div class="product product-list">
-              <div class='product-body bookings-list'>
+              <div class='product-body bookings-list list-inline'>
                 <h3>
                   <%= link_to car_path(booking.car) do %>
                     <%= booking.car.brand %> <%= booking.car.model %>
@@ -100,17 +100,23 @@
             <li>Nº Bookings</li>
             <li>Price per day</li>
             <li>Profit per car</li>
+            <li id="bookings-buttons-column" style="width: 410px";>  </li>
           </ul>
         </div>
         <% @cars.each do |car| %>
           <div class="product product-list">
-            <div class='product-body'>
-              <h3><%= car.brand %> <%= car.model %></h3>
+            <div class='list-inline product-body'>
+              <li><%= car.brand %> <%= car.model %></li>
             </div>
             <ul class="list-inline product-controls">
               <li><%= car.bookings.all.length %></li>
               <li><%= car.price_per_day.to_i %>€</li>
               <li><%= @number_of_days * car.price_per_day.to_i %>€</li>
+              <li id="bookings-buttons-column">
+                  <div class="booking-button">
+                    <%= link_to "Delete", car_path(car), method: :delete, data: { confirm: "are you sure?" }, class: "btn delete-btn" %>
+                  </div>
+                </li>
             </ul>
           </div>
         <% end %>
@@ -138,15 +144,17 @@
           <% if booking.date_to < Date.today %>
             <% nr_bookings_past += 1 %>
             <div class="product product-list">
-              <div class='product-body'>
-                <h3><%= booking.car.brand %> <%= booking.car.model %></h3>
+              <div class='list-inline product-body'>
+                <li><%= booking.car.brand %> <%= booking.car.model %></li>
               </div>
               <ul class="list-inline product-controls">
                 <li><%= booking.price.to_i %>€</li>
                 <li style="width: 200%;"><%= Date::MONTHNAMES[booking.date_to.month] %> <%= booking.date_from.day %>, <%= booking.date_from.year %> to <%= Date::MONTHNAMES[booking.date_to.month] %> <%= booking.date_to.day %></li>
                 <li id="bookings-buttons-column">
                   <div class="booking-button add-review-button-past">
-                <%= link_to "Add Review", new_booking_review_path(booking.id), class: "btn btn-add-review" %>
+                    <% if @number_of_reviews >= 0 %>
+                      <%= link_to "Add Review", new_booking_review_path(booking.id), class: "btn btn-add-review" %>
+                    <% end %>
                   </div>
                 </li>
               </ul>
